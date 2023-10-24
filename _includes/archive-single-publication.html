@@ -26,9 +26,7 @@
       </div>
     {% endif %}
 
-    <ul>
-
-    <li>{% if post.paperurl %}
+    {% if post.paperurl %}
       <h3 class="archive__item-title" itemprop="headline">
         <a href="{{ post.paperurl }}">{{ title }}</a>
       </h3> 
@@ -54,7 +52,6 @@
     <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
     {% elsif post.excerpt and site.read_more == 'enabled' %}
     <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
-    {% endif %}</li>
-  </ul>
+    {% endif %}
   </article>
 </div>

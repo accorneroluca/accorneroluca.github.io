@@ -25,24 +25,26 @@
           alt="">
       </div>
     {% endif %}
-
     <ul>
-
-    <li>{% if post.talkurl %}
+    <li>{% if post.conferenceurl %}
       <h3 class="archive__item-title" itemprop="headline">
-        <a href="{{ post.talkurl }}">{{ title }}</a>
+        <a href="{{ post.conferenceurl }}">{{ title }}</a>
       </h3>
       {% else %}
       <h3>  
         {{ title }}
       </h3>
-    {% endif %}
+      {% endif %}
     {% if post.read_time %}
       <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
     {% endif %}
-    {% if post.date %}<p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date | date: '%B %d, %Y' }}</p>{% endif %}
+    {% if post.date and post.enddate == post.date  %}
+    <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date | date: '%B %d, %Y' }}</p>
+    {% else if %}
+    <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date | date: '%B %d, %Y' }} - {{ post.enddate | date: '%B %d, %Y' }}</p>
+    {% endif %}
     {% if post.conference %}<p class="archive__item-excerpt" itemprop="description">{{post.conference}}, {{ post.venue }},  {{post.location}} {% endif %}
     {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>{% endif %}</li>
-    </ul>
+  </ul>
   </article>
 </div>

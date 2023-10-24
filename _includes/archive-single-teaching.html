@@ -28,21 +28,22 @@
 
     <ul>
 
-    <li>{% if post.talkurl %}
-      <h3 class="archive__item-title" itemprop="headline">
-        <a href="{{ post.talkurl }}">{{ title }}</a>
-      </h3>
-      {% else %}
+    <li>
       <h3>  
         {{ title }}
       </h3>
-    {% endif %}
     {% if post.read_time %}
       <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
     {% endif %}
-    {% if post.date %}<p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date | date: '%B %d, %Y' }}</p>{% endif %}
-    {% if post.conference %}<p class="archive__item-excerpt" itemprop="description">{{post.conference}}, {{ post.venue }},  {{post.location}} {% endif %}
-    {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>{% endif %}</li>
-    </ul>
+      {% if post.period %}
+        <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{post.period}} </p>
+      {% else %}
+      <p> {{ post.type }}, <i>{{ post.venue }}</i> </p>
+      {% endif %}
+      {% if post.description %}
+        {{post.description}}
+      {% endif %}
+    </li>
+  </ul>
   </article>
 </div>
