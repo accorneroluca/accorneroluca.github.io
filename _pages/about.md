@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a differential geometer. My main areas of expertise are the theory of Lie groupoids and multiplicative structures, Poisson and Jacobi geometry, and the geometry of PDEs. I am also interested in the the topology of hyperplane fields on manifolds. 
+I am a differential geometer. My main areas of expertise are the theory of Lie groupoids and multiplicative structures, Poisson and Jacobi geometry, and the geometry of PDEs. I am also interested in the topology of hyperplane fields on manifolds. 
 
 I earned my Ph.D from Universiteit Utrecht, under the supervision of Marius Crainic.
 
